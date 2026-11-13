@@ -1,0 +1,9 @@
+{
+	"town": {"name": "炉边镇", "pos": [0, 0, 0], "radius": 32},
+	"lighthouse": {"name": "余烬灯塔", "pos": [0, 0, -56], "radius": 14},
+	"hunters_hut": {"name": "灰枝的猎屋", "pos": [-140, 0, 90], "radius": 16},
+	"ruin_lighthouse": {"name": "废弃的二号灯塔", "pos": [160, 0, -120], "radius": 18},
+	"crypt": {"name": "古窖遗迹", "pos": [-50, 0, 160], "radius": 18},
+	"peak": {"name": "烬峰之巅", "pos": [200, 0, 200], "radius": 25},
+	"shrine": {"name": "雪中神龛", "pos": [-180, 0, -150], "radius": 14}
+}

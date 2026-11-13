@@ -1,0 +1,277 @@
+{
+	"nodes": {
+		"wenai_root": {
+			"speaker": "温霭",
+			"npc": "wenai",
+			"text": "炉子还热着呢。有什么事就说,锤子不等人。",
+			"choices": [
+				{"text": "老窑失踪了,你见过他吗?", "next": "wenai_m1", "if": {"quest_active": "m1_intro"}},
+				{"text": "深夜的雪橇是怎么回事?", "next": "wenai_m4", "if": {"quest_active": "m4_shadow"}},
+				{"text": "我帮你找到了寒铁矿。", "next": "wenai_s1_turnin", "if": {"quest_active": "s1_warmsteel", "has_item": "cold_iron_ore"}},
+				{"text": "暖钢……那是什么?", "next": "wenai_s1_offer", "if": {"not_flag": "s1_started", "quest_not_completed": "s1_warmsteel"}},
+				{"text": "只是路过。"
+				, "next": "end"}
+			]
+		},
+		"wenai_m1": {
+			"speaker": "温霭",
+			"npc": "wenai",
+			"text": "老窑?前天夜里他来过铺子,借走了我最好的一把凿子,说是要「撬开不该开的东西」。临走时,他往北边去了。",
+			"choices": [{"text": "不该开的东西?", "next": "wenai_m1b"}]
+		},
+		"wenai_m1b": {
+			"speaker": "温霭",
+			"npc": "wenai",
+			"text": "我问了,他只说:「温霭,如果灯塔灭了,记得带大家往南走。」……洛尘,老窑那个人,从不说不该说的话。",
+			"choices": [{"text": "我会找到他的。", "next": "end"}]
+		},
+		"wenai_m4": {
+			"speaker": "温霭",
+			"npc": "wenai",
+			"text": "雪橇?……你问这个做什么。(她放低了声音)上上周的深夜,我在铺子后头看见两驾雪橇出镇,往南边古窖的方向去了。押货的人戴着灰兜帽。第二天,镇公所就多了一箱「取暖税」。",
+			"choices": [{"text": "灰兜帽……和镇长有关?", "next": "wenai_m4b"}]
+		},
+		"wenai_m4b": {
+			"speaker": "温霭",
+			"npc": "wenai",
+			"text": "我什么都没说,你什么都没问。这镇上的人,冬天已经够难了。……但如果你要查,去古窖看看。铁匠铺后有条旧地道,是我爷爷那辈挖的,能直通遗迹。",
+			"choices": [{"text": "谢谢温霭。", "next": "end", "do": [{"type": "set_flag", "key": "crypt_path_known"}]}]
+		},
+		"wenai_s1_offer": {
+			"speaker": "温霭",
+			"npc": "wenai",
+			"text": "暖钢——寒铁矿掺着烬火余温锻出来的金属,炉火不熄,寒气不侵。我爷爷传下来的手艺,断了二十年了。要是有三块寒铁矿,我想试着重铸一次。",
+			"choices": [
+				{"text": "交给我吧。", "next": "end", "do": [{"type": "start_quest", "quest": "s1_warmsteel"}, {"type": "set_flag", "key": "s1_started"}]},
+				{"text": "再考虑一下。", "next": "end"}
+			]
+		},
+		"wenai_s1_turnin": {
+			"speaker": "温霭",
+			"npc": "wenai",
+			"text": "好矿石!冰得扎手,矿脉是活的。(她把矿石丢进炉膛,火光映在她眼里)等着,洛尘。这炉子烧了一百年,今晚它会想起自己该烧出什么。",
+			"choices": [{"text": "期待你的作品。", "next": "end", "do": [{"type": "remove_item", "item": "cold_iron_ore", "count": 3}, {"type": "set_flag", "key": "s1_turned_in"}]}]
+		},
+		"baiyuan_root": {
+			"speaker": "白鸢",
+			"npc": "baiyuan",
+			"text": "哟,守烬人大驾光临。要看点什么?消息,还是货?",
+			"choices": [
+				{"text": "老窑失踪那晚,你看见什么了吗?", "next": "baiyuan_m1", "if": {"quest_active": "m1_intro"}},
+				{"text": "这块灰晶,你认识吗?", "next": "baiyuan_m3", "if": {"quest_active": "m3_whisper"}},
+				{"text": "遗迹里发现的日记残页,给你。", "next": "baiyuan_m5", "if": {"quest_active": "m5_crypt"}},
+				{"text": "三段古谣都集齐了。", "next": "baiyuan_m6", "if": {"quest_active": "m6_ballad"}},
+				{"text": "碑文的拓片,帮我看看。", "next": "baiyuan_h3", "if": {"quest_active": "h3_ballad3"}},
+				{"text": "日记和灰晶的事,查得怎么样?", "next": "baiyuan_h2", "if": {"quest_active": "h2_ballad2"}},
+				{"text": "商队的货物找回来了。", "next": "baiyuan_s4", "if": {"quest_active": "s4_caravan"}},
+				{"text": "看看你的货。", "next": "end", "do": [{"type": "shop", "shop": "baiyuan"}]},
+				{"text": "只是随便逛逛。", "next": "end"}
+			]
+		},
+		"baiyuan_m1": {
+			"speaker": "白鸢",
+			"npc": "baiyuan",
+			"text": "老窑啊……那晚我在镇口收摊,看见他往北边雪径去了,走得急,火把都忘在摊上。哦对,猎屋的灰枝托人带过话,说那几天北边的狼躁动得厉害,像是在躲什么东西。",
+			"choices": [{"text": "北边……知道了。", "next": "end"}]
+		},
+		"baiyuan_m3": {
+			"speaker": "白鸢",
+			"npc": "baiyuan",
+			"text": "灰烬教团的「烬契」——他们管这叫信物。贴近耳朵听听?……听见了吗,那种细碎的低语。教团的人说,这是「冬之神」在说话。",
+			"choices": [{"text": "冬之神?", "next": "baiyuan_m3b"}]
+		},
+		"baiyuan_m3b": {
+			"speaker": "白鸢",
+			"npc": "baiyuan",
+			"text": "信则有。我只知道一件事:这东西在镇上流通,就说明镇里有人在跟教团做生意。守烬人,你的雪径,恐怕要通向自家后院了。",
+			"choices": [{"text": "多谢提醒。", "next": "end"}]
+		},
+		"baiyuan_m5": {
+			"speaker": "白鸢",
+			"npc": "baiyuan",
+			"text": "「灯塔历元年,吾等七人立塔于龙脉之上。塔非守护,乃汲取也。龙火入塔,寒气入地。冬非天罚,冬乃人祸。」……这是灯塔看守人的笔迹。洛尘,我们守的火,是从龙的血里偷来的。",
+			"choices": [{"text": "怎么会……", "next": "baiyuan_m5b"}]
+		},
+		"baiyuan_m5b": {
+			"speaker": "白鸢",
+			"npc": "baiyuan",
+			"text": "长冬不是天灾,是巨龙被抽取地脉之火后的垂死之寒。灯塔烧得越旺,龙就死得越快,冬天就越来越冷。这是我家族守护了七代的秘密——古谣守护者,白氏。要听完整的真相,得找到三段古谣。",
+			"choices": [{"text": "我会找齐古谣。", "next": "end", "do": [{"type": "give_item", "item": "hunter_journal"}, {"type": "set_flag", "key": "truth_known"}]}]
+		},
+		"baiyuan_m6": {
+			"speaker": "白鸢",
+			"npc": "baiyuan",
+			"text": "「七塔燃尽之日,巨龙垂死之时;火焰窃自地脉,寒冬始于人心。」……「守烬人啊,你守的究竟是火,还是把火偷来的那双手?」……「唯有血脉为薪,人火与龙火,方能同炉而燃。」",
+			"choices": [{"text": "血脉为薪……是什么意思?", "next": "baiyuan_m6b"}]
+		},
+		"baiyuan_m6b": {
+			"speaker": "白鸢",
+			"npc": "baiyuan",
+			"text": "守烬人的血,天生能承受烬火而不焚。第一代守烬人,就是用这个方法把龙火引入灯塔的。只要有人愿意以身为引,人火与龙火可以共生——不用偷,不用熄,而是「同炉而燃」。但那意味着,守烬人要永远留在烬峰,做那座炉子。",
+			"choices": [{"text": "老窑……早就知道这些了?", "next": "baiyuan_m6c"}]
+		},
+		"baiyuan_m6c": {
+			"speaker": "白鸢",
+			"npc": "baiyuan",
+			"text": "他上个月来找过我,问了一模一样的问题。然后他笑着说:「那这炉子,该换我当了。」……去烬峰吧,洛尘。老窑在那里,答案也在那里。小心灰烬主教——他等这一天很久了。",
+			"choices": [{"text": "烬峰之路,我来了。", "next": "end"}]
+		},
+		"baiyuan_h2": {
+			"speaker": "白鸢",
+			"npc": "baiyuan",
+			"text": "(她拂去灰晶上的霜)封在晶石里的日记,教团的手笔,他们想藏起看守人的记录。残页二:「守烬人啊,你守的究竟是火,还是把火偷来的那双手?」……拿去吧,这是你的家族史,也是所有人的债。",
+			"choices": [{"text": "谢谢。", "next": "end", "do": [{"type": "remove_item", "item": "ash_crystal", "count": 3}]}]
+		},
+		"baiyuan_h3": {
+			"speaker": "白鸢",
+			"npc": "baiyuan",
+			"text": "拓得不错。碑文是古烬文,写的是:「唯有血脉为薪,人火与龙火,方能同炉而燃。」……这是古谣的最后一段。守烬人,它选了你。",
+			"choices": [{"text": "我会记住的。", "next": "end"}]
+		},
+		"baiyuan_s4": {
+			"speaker": "白鸢",
+			"npc": "baiyuan",
+			"text": "货找回来就好,人没伤着就行。教团的伏击越来越明目张胆了……他们不怕镇上的人,因为镇上有人给他们递消息。这些雪币你收着,算商队的谢礼。",
+			"choices": [{"text": "保重。", "next": "end"}]
+		},
+		"huizhi_root": {
+			"speaker": "灰枝",
+			"npc": "huizhi",
+			"text": "(他擦拭着猎刀,头也不抬)镇上的人?还是……守烬人?说吧,雪原上没有秘密。",
+			"choices": [
+				{"text": "老窑来过这里吗?", "next": "huizhi_m2", "if": {"quest_active": "m2_trail"}},
+				{"text": "狼群的事,处理好了。", "next": "huizhi_s2", "if": {"quest_active": "s2_wolfking"}},
+				{"text": "狼群最近为什么这么暴躁?", "next": "huizhi_s2_offer", "if": {"not_flag": "s2_started", "quest_not_completed": "s2_wolfking"}},
+				{"text": "告辞。", "next": "end"}
+			]
+		},
+		"huizhi_m2": {
+			"speaker": "灰枝",
+			"npc": "huizhi",
+			"text": "老窑……三天前,他在我这儿借了张雪地地图,连夜往东边去了。走之前留了句话:「如果我回不来,让我的徒弟去找坐标上的地方。」这个给你——他落在屋里",
+			"choices": [{"text": "(接过信物)", "next": "huizhi_m2b"}]
+		},
+		"huizhi_m2b": {
+			"speaker": "灰枝",
+			"npc": "huizhi",
+			"text": "还有,年轻人。他往东走后,东边废塔那边就来了批灰兜帽。狼是死了我两只猎犬的野兽,而人——人比狼难缠。带上你的剑。",
+			"choices": [{"text": "我会小心的。", "next": "end", "do": [{"type": "give_item", "item": "old_token"}]}]
+		},
+		"huizhi_s2_offer": {
+			"speaker": "灰枝",
+			"npc": "huizhi",
+			"text": "狼在躲地底下的东西。雪下有什么在醒,狼比人先知道。它们不敢进山,就往镇子的粮仓跑。……替我清理四只,我这有件祖传的雪狼皮甲,你用得上。",
+			"choices": [
+				{"text": "包在我身上。", "next": "end", "do": [{"type": "start_quest", "quest": "s2_wolfking"}, {"type": "set_flag", "key": "s2_started"}]},
+				{"text": "我还有事。", "next": "end"}
+			]
+		},
+		"huizhi_s2": {
+			"speaker": "灰枝",
+			"npc": "huizhi",
+			"text": "干得利落。皮甲给你——针脚是我奶奶缝的,比你的命还结实。地底下的事……如果有一天地面开始发烫,别犹豫,往高处跑。",
+			"choices": [{"text": "记住了。", "next": "end"}]
+		},
+		"mohuan_root": {
+			"speaker": "镇长·墨桓",
+			"npc": "mo_huan",
+			"text": "洛尘啊。灯塔的事,镇公所正在研究,你不必操心。……还有什么事?",
+			"choices": [
+				{"text": "深夜出镇的雪橇,是镇公所的?", "next": "mohuan_m4", "if": {"quest_active": "m4_shadow"}},
+				{"text": "没什么,镇长。", "next": "end"}
+			]
+		},
+		"mohuan_m4": {
+			"speaker": "镇长·墨桓",
+			"npc": "mo_huan",
+			"text": "(他的手指在桌面上停了半拍)雪橇?冬天运炭,再正常不过。……守烬人的职责是灯塔,不是镇上的货运账本。我说清楚了吗?",
+			"choices": [{"text": "……说清楚了。", "next": "end", "do": [{"type": "set_flag", "key": "mohuan_suspicious"}]}]
+		},
+		"townsfolk_a_root": {
+			"speaker": "镇民·阿禾",
+			"npc": "townsfolk_a",
+			"text": "洛尘!听说老窑失踪了?天呐……镇上最近怪事真多。",
+			"choices": [
+				{"text": "最近有什么传闻吗?", "next": "townsfolk_a_m4", "if": {"quest_active": "m4_shadow"}},
+				{"text": "最近怎么样?", "next": "townsfolk_a_idle"}
+			]
+		},
+		"townsfolk_a_m4": {
+			"speaker": "镇民·阿禾",
+			"npc": "townsfolk_a",
+			"text": "传闻?多了去了。有人说夜里看见戴灰兜帽的人在镇外点蓝火;有人说镇长书房的灯整夜亮着,可敲门从来不开;还有人说……灯塔的火,其实是全镇人的命换来的。都是瞎传的啦,别当真。",
+			"choices": [{"text": "蓝火……", "next": "townsfolk_a_m4b"}]
+		},
+		"townsfolk_a_m4b": {
+			"speaker": "镇民·阿禾",
+			"npc": "townsfolk_a",
+			"text": "对,雪地里烧的蓝火,不化雪。我爹说那是教团的「引路火」,烧的地方,雪底下都是空的。……你要是去查,带够热汤。真的。",
+			"choices": [{"text": "谢谢提醒。", "next": "end"}]
+		},
+		"townsfolk_a_idle": {
+			"speaker": "镇民·阿禾",
+			"npc": "townsfolk_a",
+			"text": "照旧。白天补网,晚上数星星,祈祷灯塔别灭。……哎,要是老窑在,他总会想办法的,对吧?",
+			"choices": [{"text": "嗯,他会回来的。", "next": "end"}]
+		},
+		"townsfolk_b_root": {
+			"speaker": "老雪橇夫·陈伯",
+			"npc": "townsfolk_b",
+			"text": "(他眯着眼,酒壶不离手)小守烬人……来,坐。雪原上,老头子的故事比酒还多。",
+			"choices": [
+				{"text": "阿黄找到了,在神龛那儿。", "next": "townsfolk_b_s3", "if": {"quest_active": "s3_sled"}},
+				{"text": "陈伯,听说你喝醉了会唱歌?", "next": "townsfolk_b_h1", "if": {"not_flag": "h1_done"}},
+				{"text": "最近有什么故事?", "next": "townsfolk_b_idle"}
+			]
+		},
+		"townsfolk_b_s3": {
+			"speaker": "老雪橇夫·陈伯",
+			"npc": "townsfolk_b",
+			"text": "阿黄!好狗,好狗……(他搂住老狗的脖子)它认得神龛的路,它娘就是在那儿生的它。这罐龙息茶给你,我藏了十年,本来打算……算了,值得。",
+			"choices": [{"text": "祝你们平安。", "next": "end"}]
+		},
+		"townsfolk_b_h1": {
+			"speaker": "老雪橇夫·陈伯",
+			"npc": "townsfolk_b",
+			"text": "歌?哈哈……那是老窑他爹教我的,守烬人的老歌谣。喝到第几壶了来着……「七塔燃尽之日——」咳,老了,词儿记不全喽。",
+			"choices": [{"text": "陈伯,拜托,再想想。", "next": "townsfolk_b_h1b"}]
+		},
+		"townsfolk_b_h1b": {
+			"speaker": "老雪橇夫·陈伯",
+			"npc": "townsfolk_b",
+			"text": "(他闭着眼,哼了很久)「七塔燃尽之日,巨龙垂死之时;火焰窃自地脉,寒冬始于人心。」……就记得这么多。这破纸给你,我年轻时候抄的,别笑话老头子。",
+			"choices": [{"text": "这很重要,谢谢陈伯。", "next": "end", "do": [{"type": "set_flag", "key": "h1_done"}, {"type": "start_quest", "quest": "h1_ballad1"}, {"type": "set_flag", "key": "h1_started"}]}]
+		},
+		"townsfolk_b_idle": {
+			"speaker": "老雪橇夫·陈伯",
+			"npc": "townsfolk_b",
+			"text": "故事?以前啊,灯塔没这么暗,雪没这么深,狼也不敢靠近官道。守烬人一挥手,火就听话……你老窑年轻那会儿,火苗能蹿三尺高。哪像现在,唉。",
+			"choices": [{"text": "火……会再亮起来的。", "next": "end"}]
+		},
+		"altar_root": {
+			"speaker": "烬峰祭坛",
+			"text": "祭坛中央,老窑留下的凿子静静躺在龙脉的裂口旁。裂口深处,暗红的龙火像心跳一样明灭。是时候做出决定了。",
+			"choices": [
+				{"text": "重燃灯塔——用龙火续上炉边镇的暖冬(结局:续焰)", "next": "altar_end1", "if": {"quest_active": "m8_final_choice"}},
+				{"text": "熄灭灯塔——让龙火回归大地,等待春天(结局:释龙)", "next": "altar_end2", "if": {"quest_active": "m8_final_choice"}},
+				{"text": "以身为炉——守烬人之血为薪,人火与龙火同燃(结局:薪传)", "next": "altar_end3", "if": {"quest_active": "m8_final_choice", "quest_completed": "m6_ballad"}},
+				{"text": "再想想。", "next": "end"}
+			]
+		},
+		"altar_end1": {
+			"speaker": "老窑",
+			"text": "(恍惚间,你听见导师的声音)「洛尘……火在,人就在。让他们……活下去。」……你握紧凿子,将龙火引入灯塔的脉络。远处的灯塔轰然亮起,像一颗迟到的太阳。",
+			"choices": [{"text": "……对不起。", "next": "end", "do": [{"type": "set_flag", "key": "ending_chosen"}, {"type": "ending", "id": "continue_flame"}]}]
+		},
+		"altar_end2": {
+			"speaker": "老窑",
+			"text": "(恍惚间,你听见导师的声音)「洛尘……火不该是偷来的。让它……回家。」……你凿断灯塔的脉络。大地的震颤从脚底升起,那是龙的呼吸,七年来第一次如此安稳。灯灭了,但地暖了。",
+			"choices": [{"text": "回家吧。", "next": "end", "do": [{"type": "set_flag", "key": "ending_chosen"}, {"type": "ending", "id": "release_dragon"}]}]
+		},
+		"altar_end3": {
+			"speaker": "老窑",
+			"text": "(裂口旁,导师的身影在热浪中微笑)「来了,我的徒弟。我等这一天,等了三十年。」……你伸出手,守烬人之血触到龙火的一瞬,两团火焰——一红一蓝——交织、共鸣、同燃。老窑的身影化作火星,融入你胸腔里那颗新的、温暖的炉膛。",
+			"choices": [{"text": "老师……我明白了。火焰从来不属于一个人。", "next": "end", "do": [{"type": "set_flag", "key": "ending_chosen"}, {"type": "ending", "id": "ember_legacy"}]}]
+		}
+	}
+}

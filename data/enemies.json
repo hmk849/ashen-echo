@@ -1,0 +1,7 @@
+{
+	"wolf": {"name": "蚀骨雪狼", "hp": 35, "damage": 7, "speed": 4.5, "aggro": 16, "attack_range": 1.8, "xp": 20, "model": "wolf", "loot": ["wolf_pelt", "wolf_fang"]},
+	"cultist": {"name": "灰烬信徒", "hp": 45, "damage": 9, "speed": 3.2, "aggro": 15, "attack_range": 2.0, "xp": 30, "model": "humanoid", "colors": {"cloth": [0.25, 0.12, 0.12], "pants": [0.15, 0.1, 0.12]}, "loot": ["ash_crystal"]},
+	"cultist_elite": {"name": "教团执事", "hp": 80, "damage": 14, "speed": 3.6, "aggro": 18, "attack_range": 2.2, "xp": 70, "model": "humanoid", "colors": {"cloth": [0.35, 0.08, 0.08], "pants": [0.2, 0.05, 0.08]}, "loot": ["ash_crystal"]},
+	"golem": {"name": "雪傀儡", "hp": 120, "damage": 16, "speed": 2.2, "aggro": 12, "attack_range": 2.6, "xp": 90, "model": "golem", "loot": ["cold_iron_ore"]},
+	"boss_bishop": {"name": "灰烬主教·墨恒", "hp": 400, "damage": 22, "speed": 3.8, "aggro": 20, "attack_range": 2.8, "xp": 500, "model": "humanoid", "colors": {"cloth": [0.5, 0.1, 0.08], "pants": [0.1, 0.1, 0.12]}, "loot": ["dragon_scale", "ash_crystal"]}
+}

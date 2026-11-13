@@ -1,0 +1,47 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+
+config_version=5
+
+[application]
+
+config/name="烬峰回响 Ashen Echo"
+config/description="霜烬大陆 · 单机开放世界动作冒险。永冬之下,最后一座余烬灯塔的火焰正在衰竭。"
+run/main_scene="res://scenes/main.tscn"
+config/features=PackedStringArray("4.4", "Mobile")
+
+[autoload]
+
+EventBus="*res://scripts/autoload/event_bus.gd"
+GameData="*res://scripts/autoload/game_data.gd"
+GameState="*res://scripts/autoload/game_state.gd"
+QuestManager="*res://scripts/autoload/quest_manager.gd"
+DialogueManager="*res://scripts/autoload/dialogue_manager.gd"
+SaveManager="*res://scripts/autoload/save_manager.gd"
+AudioManager="*res://scripts/autoload/audio_manager.gd"
+TouchInput="*res://scripts/autoload/touch_input.gd"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/handheld/orientation=4
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
+[rendering]
+
+renderer/rendering_method="mobile"
+renderer/rendering_method.mobile="mobile"
+textures/vram_compression/import_etc2_astc=true
+environment/defaults/default_clear_color=Color(0.08, 0.1, 0.14, 1)
+anti_aliasing/quality/msaa_3d=1
+
+[gui]
+
+theme/default_font_multichannel_signed_distance_field=false

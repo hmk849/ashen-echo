@@ -1,0 +1,399 @@
+{
+  "m1_intro": {
+    "title": "第一章 · 灯下之影",
+    "main": true,
+    "desc": "导师老窑彻夜未归,灯塔的火焰比往常黯淡。从镇上的人开始问起。",
+    "steps": [
+      {
+        "type": "talk",
+        "target": "wenai",
+        "desc": "向铁匠温霭打听老窑的下落"
+      },
+      {
+        "type": "reach",
+        "target": "lighthouse",
+        "desc": "前往余烬灯塔查看异状"
+      },
+      {
+        "type": "talk",
+        "target": "baiyuan",
+        "desc": "向游商白鸢询问线索"
+      }
+    ],
+    "rewards": {
+      "xp": 60,
+      "gold": 15
+    },
+    "next": "m2_trail"
+  },
+  "m2_trail": {
+    "title": "第二章 · 雪径寻踪",
+    "main": true,
+    "desc": "白鸢说,老窑失踪那晚朝着北面的猎屋方向去了。雪径危险,狼群最近异常暴躁。",
+    "steps": [
+      {
+        "type": "reach",
+        "target": "hunters_hut",
+        "desc": "沿雪径前往灰枝的猎屋"
+      },
+      {
+        "type": "kill",
+        "target": "wolf",
+        "count": 2,
+        "desc": "清除路上袭击的蚀骨雪狼"
+      },
+      {
+        "type": "talk",
+        "target": "huizhi",
+        "desc": "向猎人灰枝询问老窑的行踪"
+      }
+    ],
+    "rewards": {
+      "xp": 90,
+      "gold": 20,
+      "items": [
+        "keeper_sword"
+      ]
+    },
+    "next": "m3_whisper"
+  },
+  "m3_whisper": {
+    "title": "第三章 · 灰烬低语",
+    "main": true,
+    "desc": "灰枝捡到了老窑的信物,坐标指向东面的废弃灯塔。那里最近常有戴灰兜帽的人出没。",
+    "steps": [
+      {
+        "type": "reach",
+        "target": "ruin_lighthouse",
+        "desc": "前往废弃的二号灯塔"
+      },
+      {
+        "type": "kill",
+        "target": "cultist",
+        "count": 3,
+        "desc": "击退占据灯塔的灰烬信徒"
+      },
+      {
+        "type": "collect",
+        "target": "ash_crystal",
+        "count": 1,
+        "desc": "在灯塔中寻找异常之物(灰晶)"
+      },
+      {
+        "type": "talk",
+        "target": "baiyuan",
+        "desc": "把灰晶带给白鸢鉴定"
+      }
+    ],
+    "rewards": {
+      "xp": 130,
+      "gold": 25
+    },
+    "next": "m4_shadow"
+  },
+  "m4_shadow": {
+    "title": "第四章 · 镇中之影",
+    "main": true,
+    "desc": "白鸢说灰晶是教团的信物,而镇上有人和教团做交易。深夜运货的雪橇,究竟是谁的?",
+    "steps": [
+      {
+        "type": "talk",
+        "target": "mo_huan",
+        "desc": "询问镇长墨桓关于深夜雪橇的事"
+      },
+      {
+        "type": "talk",
+        "target": "townsfolk_a",
+        "desc": "向阿禾打听镇上的传闻"
+      },
+      {
+        "type": "talk",
+        "target": "wenai",
+        "desc": "温霭似乎在铁匠铺后见过什么,去问问她"
+      }
+    ],
+    "rewards": {
+      "xp": 150,
+      "gold": 30
+    },
+    "next": "m5_crypt"
+  },
+  "m5_crypt": {
+    "title": "第五章 · 深窖秘密",
+    "main": true,
+    "desc": "温霭在铁匠铺后发现了通往古窖遗迹的旧地道。老窑的踪迹,或许就在那里。",
+    "steps": [
+      {
+        "type": "reach",
+        "target": "crypt",
+        "desc": "深入古窖遗迹"
+      },
+      {
+        "type": "kill",
+        "target": "cultist",
+        "count": 3,
+        "desc": "清除遗迹中的灰烬信徒"
+      },
+      {
+        "type": "talk",
+        "target": "baiyuan",
+        "desc": "把遗迹中发现的日记残页带给白鸢"
+      }
+    ],
+    "rewards": {
+      "xp": 200,
+      "gold": 40,
+      "items": [
+        "herb_paste",
+        "warm_soup"
+      ]
+    },
+    "next": "m6_ballad"
+  },
+  "m6_ballad": {
+    "title": "第六章 · 白鸢的古谣",
+    "main": true,
+    "desc": "日记揭示了一个惊人的真相:灯塔之火,抽取的是沉眠巨龙的地脉之火。集齐三段古谣,才能找到龙与人共存的方法。",
+    "steps": [
+      {
+        "type": "collect",
+        "target": "ballad_fragment_1",
+        "count": 1,
+        "desc": "寻找古谣残页一(传闻藏于醉汉的歌里)"
+      },
+      {
+        "type": "collect",
+        "target": "ballad_fragment_2",
+        "count": 1,
+        "desc": "寻找古谣残页二(灯塔看守人的日记)"
+      },
+      {
+        "type": "collect",
+        "target": "ballad_fragment_3",
+        "count": 1,
+        "desc": "寻找古谣残页三(雪中神龛的石碑)"
+      },
+      {
+        "type": "talk",
+        "target": "baiyuan",
+        "desc": "把三段古谣带给白鸢"
+      }
+    ],
+    "rewards": {
+      "xp": 260,
+      "gold": 50
+    },
+    "next": "m7_peak"
+  },
+  "m7_peak": {
+    "title": "第七章 · 烬峰之路",
+    "main": true,
+    "desc": "古谣指引的道路尽头是烬峰之巅。灰烬主教已在那里等候——为了终结,也为了开始。",
+    "steps": [
+      {
+        "type": "reach",
+        "target": "peak",
+        "desc": "攀登烬峰之巅"
+      },
+      {
+        "type": "flag",
+        "flag": "boss_dead_boss_bishop",
+        "desc": "击败灰烬主教·墨恒"
+      }
+    ],
+    "rewards": {
+      "xp": 500,
+      "gold": 100,
+      "items": [
+        "dragon_scale"
+      ]
+    },
+    "next": "m8_final_choice"
+  },
+  "m8_final_choice": {
+    "title": "终章 · 终焰抉择",
+    "main": true,
+    "desc": "主教倒下了,祭坛就在眼前。重燃灯塔,或是释放龙火,又或……走出第三条路。这个选择,将决定霜烬大陆的未来。",
+    "steps": [
+      {
+        "type": "reach",
+        "target": "peak",
+        "desc": "走向烬峰祭坛"
+      },
+      {
+        "type": "flag",
+        "flag": "ending_chosen",
+        "desc": "做出你的抉择"
+      }
+    ],
+    "rewards": {
+      "xp": 100,
+      "gold": 0
+    }
+  },
+  "s1_warmsteel": {
+    "title": "支线 · 暖钢重铸",
+    "desc": "温霭想重铸失传的暖钢,需要三块寒铁矿。",
+    "steps": [
+      {
+        "type": "collect",
+        "target": "cold_iron_ore",
+        "count": 3,
+        "desc": "收集寒铁矿 ×3"
+      },
+      {
+        "type": "talk",
+        "target": "wenai",
+        "desc": "把寒铁矿交给温霭"
+      }
+    ],
+    "rewards": {
+      "xp": 120,
+      "gold": 30,
+      "items": [
+        "warmsteel_sword"
+      ]
+    }
+  },
+  "s2_wolfking": {
+    "title": "支线 · 狼王之患",
+    "desc": "灰枝说,狼群暴躁是因为「那位」在雪下苏醒。帮猎人清理狼群,换取他压箱底的皮甲。",
+    "steps": [
+      {
+        "type": "kill",
+        "target": "wolf",
+        "count": 4,
+        "desc": "猎杀蚀骨雪狼 ×4"
+      },
+      {
+        "type": "talk",
+        "target": "huizhi",
+        "desc": "向灰枝复命"
+      }
+    ],
+    "rewards": {
+      "xp": 140,
+      "gold": 40,
+      "items": [
+        "leather_armor"
+      ]
+    }
+  },
+  "s3_sled": {
+    "title": "支线 · 迷路的雪橇犬",
+    "desc": "陈伯的雪橇犬阿黄在暴雪中走丢了。老狗认得去神龛的路——它总在那里躲雪。",
+    "steps": [
+      {
+        "type": "reach",
+        "target": "shrine",
+        "desc": "去雪中神龛找找阿黄"
+      },
+      {
+        "type": "talk",
+        "target": "townsfolk_b",
+        "desc": "把阿黄带回给陈伯"
+      }
+    ],
+    "rewards": {
+      "xp": 100,
+      "gold": 35,
+      "items": [
+        "dragon_tea"
+      ]
+    }
+  },
+  "s4_caravan": {
+    "title": "支线 · 商队的遗失货物",
+    "desc": "白鸢的商队在废弃灯塔附近遭了教团的伏击,一批货散落在雪地里。",
+    "steps": [
+      {
+        "type": "reach",
+        "target": "ruin_lighthouse",
+        "desc": "前往废弃灯塔附近搜寻"
+      },
+      {
+        "type": "collect",
+        "target": "firewood",
+        "count": 2,
+        "desc": "顺便收集一些木柴(标记位置用)"
+      },
+      {
+        "type": "talk",
+        "target": "baiyuan",
+        "desc": "向白鸢复命"
+      }
+    ],
+    "rewards": {
+      "xp": 110,
+      "gold": 60
+    }
+  },
+  "h1_ballad1": {
+    "title": "隐藏 · 醉汉的歌",
+    "hidden": true,
+    "desc": "陈伯喝多了就会唱一支没人听得懂的老歌。",
+    "steps": [
+      {
+        "type": "talk",
+        "target": "townsfolk_b",
+        "desc": "听陈伯唱完那支老歌"
+      }
+    ],
+    "rewards": {
+      "xp": 80,
+      "gold": 0,
+      "items": [
+        "ballad_fragment_1"
+      ]
+    }
+  },
+  "h2_ballad2": {
+    "title": "隐藏 · 灯塔看守人的日记",
+    "hidden": true,
+    "desc": "废弃灯塔的顶层,似乎藏着一本被时间遗忘的日记。",
+    "steps": [
+      {
+        "type": "collect",
+        "target": "ash_crystal",
+        "count": 3,
+        "desc": "收集灰晶 ×3(日记被教团晶石封存)"
+      },
+      {
+        "type": "talk",
+        "target": "baiyuan",
+        "desc": "请白鸢解读日记"
+      }
+    ],
+    "rewards": {
+      "xp": 120,
+      "gold": 0,
+      "items": [
+        "ballad_fragment_2"
+      ]
+    }
+  },
+  "h3_ballad3": {
+    "title": "隐藏 · 雪中神龛",
+    "hidden": true,
+    "desc": "神龛的石碑上刻着一行几乎被风雪磨平的古文字。",
+    "steps": [
+      {
+        "type": "reach",
+        "target": "shrine",
+        "desc": "造访雪中神龛"
+      },
+      {
+        "type": "talk",
+        "target": "baiyuan",
+        "desc": "拓下碑文,请白鸢辨认"
+      }
+    ],
+    "rewards": {
+      "xp": 100,
+      "gold": 0,
+      "items": [
+        "ballad_fragment_3"
+      ]
+    }
+  }
+}
