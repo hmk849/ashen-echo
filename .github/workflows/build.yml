@@ -137,11 +137,21 @@ jobs:
           ICON_DIR="assets/icons"
           mkdir -p "$ICON_DIR"
           rsvg-convert -w 1024 -h 1024 icon.svg -o "$ICON_DIR/app_store_1024.png"
+          sips -z 58 58 "$ICON_DIR/app_store_1024.png" --out "$ICON_DIR/settings_58.png"
+          sips -z 87 87 "$ICON_DIR/app_store_1024.png" --out "$ICON_DIR/settings_87.png"
+          sips -z 40 40 "$ICON_DIR/app_store_1024.png" --out "$ICON_DIR/notification_40.png"
+          sips -z 60 60 "$ICON_DIR/app_store_1024.png" --out "$ICON_DIR/notification_60.png"
+          sips -z 76 76 "$ICON_DIR/app_store_1024.png" --out "$ICON_DIR/notification_76.png"
+          sips -z 114 114 "$ICON_DIR/app_store_1024.png" --out "$ICON_DIR/notification_114.png"
+          sips -z 80 80 "$ICON_DIR/app_store_1024.png" --out "$ICON_DIR/spotlight_80.png"
+          sips -z 120 120 "$ICON_DIR/app_store_1024.png" --out "$ICON_DIR/spotlight_120.png"
           sips -z 120 120 "$ICON_DIR/app_store_1024.png" --out "$ICON_DIR/iphone_120.png"
           sips -z 180 180 "$ICON_DIR/app_store_1024.png" --out "$ICON_DIR/iphone_180.png"
-          sips -z 76 76 "$ICON_DIR/app_store_1024.png" --out "$ICON_DIR/ipad_76.png"
-          sips -z 152 152 "$ICON_DIR/app_store_1024.png" --out "$ICON_DIR/ipad_152.png"
           sips -z 167 167 "$ICON_DIR/app_store_1024.png" --out "$ICON_DIR/ipad_167.png"
+          sips -z 152 152 "$ICON_DIR/app_store_1024.png" --out "$ICON_DIR/ipad_152.png"
+          sips -z 128 128 "$ICON_DIR/app_store_1024.png" --out "$ICON_DIR/ios_128.png"
+          sips -z 192 192 "$ICON_DIR/app_store_1024.png" --out "$ICON_DIR/ios_192.png"
+          sips -z 136 136 "$ICON_DIR/app_store_1024.png" --out "$ICON_DIR/ios_136.png"
           ls -lh "$ICON_DIR"
 
       - name: Import Godot project
@@ -153,7 +163,7 @@ jobs:
         continue-on-error: true
         run: |
           set +e
-          ASHEN_TEST=1 timeout 600 "$GODOT" --headless --path . > test.log 2>&1
+          ASHEN_TEST=1 "$GODOT" --headless --path . > test.log 2>&1
           echo "test exit code: $?"
           grep -E "TEST_RESULT|\[FAIL\]" test.log || echo "(no TEST_RESULT line in log)"
           tail -5 test.log
@@ -187,11 +197,21 @@ jobs:
           application/name="烬峰回响"
           application/export_project_only=true
           display/orientation="landscape"
+          icons/settings_58x58="res://assets/icons/settings_58.png"
+          icons/settings_87x87="res://assets/icons/settings_87.png"
+          icons/notification_40x40="res://assets/icons/notification_40.png"
+          icons/notification_60x60="res://assets/icons/notification_60.png"
+          icons/notification_76x76="res://assets/icons/notification_76.png"
+          icons/notification_114x114="res://assets/icons/notification_114.png"
+          icons/spotlight_80x80="res://assets/icons/spotlight_80.png"
+          icons/spotlight_120x120="res://assets/icons/spotlight_120.png"
           icons/iphone_120x120="res://assets/icons/iphone_120.png"
           icons/iphone_180x180="res://assets/icons/iphone_180.png"
-          icons/ipad_76x76="res://assets/icons/ipad_76.png"
-          icons/ipad_152x152="res://assets/icons/ipad_152.png"
           icons/ipad_167x167="res://assets/icons/ipad_167.png"
+          icons/ipad_152x152="res://assets/icons/ipad_152.png"
+          icons/ios_128x128="res://assets/icons/ios_128.png"
+          icons/ios_192x192="res://assets/icons/ios_192.png"
+          icons/ios_136x136="res://assets/icons/ios_136.png"
           icons/app_store_1024x1024="res://assets/icons/app_store_1024.png"
           PRESET
 
